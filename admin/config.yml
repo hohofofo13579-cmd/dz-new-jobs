@@ -1,0 +1,22 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: "jobs"
+    label: "الوظائف"
+    folder: "src/content/jobs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "تاريخ النشر", name: "publishDate", widget: "datetime" }
+      - { label: "الولاية", name: "wilayaCode", widget: "select", options: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58"] }
+      - { label: "التصنيف", name: "category", widget: "select", options: ["إدارية", "تعليم", "صحة", "تقنية", "عمال مهنيين", "أخرى"] }
+      - { label: "صورة الشركة (Logo)", name: "thumbnail", widget: "image" }
+      - { label: "المحتوى", name: "body", widget: "markdown" }
+      - { label: "رابط التقديم الخارجي", name: "applyUrl", widget: "string" }
