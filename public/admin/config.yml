@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "jobs"
+    label: "الوظائف"
+    folder: "src/content/jobs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "عنوان الوظيفة", name: "title", widget: "string"}
+      - {label: "تاريخ النشر", name: "date", widget: "datetime"}
+      - {label: "الولاية", name: "location", widget: "select", options: ["الجزائر", "سطيف", "وهران", "قسنطينة", "عنابة", "باقي الولايات"]}
+      - {label: "تفاصيل الإعلان", name: "body", widget: "markdown"}
+      
