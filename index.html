@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,5 +60,16 @@
 </head>
   <body>
     <div id="root"></div>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+  </script>
   </body>
 </html>
